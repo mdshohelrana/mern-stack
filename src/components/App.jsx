@@ -1,26 +1,15 @@
-import React from "react";
-import logo from "../assets/images/logo.svg";
-import "./App.scss";
+import React from 'react';
+import Navbar from './Navbar/Navbar';
+import Footer from './Footer/Footer';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1>
-            Welcome to React app
-          </h1>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <React.Fragment>
+        <Navbar history={this.props.history} />
+        {this.props.children}
+        <Footer />
+      </React.Fragment>
     );
   }
 }
